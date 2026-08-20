@@ -1,0 +1,36 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "commerce-llms-txt",
+	"main": "./src/llms-txt-worker/index.ts",
+	"compatibility_date": "2025-10-08",
+	"compatibility_flags": ["nodejs_compat"],
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "./dist/client",
+		"not_found_handling": "single-page-application",
+		"run_worker_first": ["/api", "/api/*", "/llms.txt", "/llms-full.txt"]
+	},
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "ENRICHMENT_CACHE",
+			"id": "3ac18bb25e9d4be29da3fdb941b86d1d"
+		}
+	],
+	"vars": {
+		"MERCHANT_NAME": "TaTTTy",
+		"MERCHANT_DESCRIPTION": "TaTTTy is an e-commerce storefront that sells professional-grade tattoo numbing creams, fast-acting mid-session numbing sprays, skin-repairing aftercare balms, moisturizing butter sticks, temporary tattoo sheets, and branded studio apparel. Alongside physical gear, the store features 52+ never-before-seen unique tattoo styles available as instantly downloadable digital tattoo flash art sheets, vector stencils, linework blueprints, and geometric design packages that clients can purchase to print out or use directly as a stenciling template for their tattoo artist.",
+		"STORE_CURRENCY": "USD",
+		"SHIPPING_POLICY": "Digital Products — Instant Download&nbsp;All digital products (tattoo designs, AI-generated artwork, and downloadable files) are delivered instantly upon purchase. No shipping is required. You will receive an email with your download link immediately after payment is confirmed.  Physical Products — Fulfilled by Vendor Partners&nbsp;Physical products (tattoo aftercare, apparel, accessories, and equipment) are fulfilled and shipped directly by our vendor partners. We do not stock or ship physical inventory ourselves.  Shipping rates are calculated at checkout based on your location and the items in your order.  Estimated Delivery Times:  United States: 3–7 business days Canada: 5–10 business days International: 7–21 business days  Delivery times may vary, Once your order ships, you will receive a tracking number via email.  Questions?&nbsp;Contact us at help@tattty.com for any shipping-related inquiries.",
+		"RETURN_POLICY": "Digital Products&nbsp;All digital purchases — including credit packs, AI-generated tattoo designs, and downloadable artwork — are final sale. No returns or refunds.  Physical Products&nbsp;We have a 30-day return policy. You have 30 days after receiving your item to request a return. Items must be unused, in original condition and packaging, with proof of purchase.  To start a return, contact us at teamtattty@tattty.com. Do not send items back without first requesting a return. Once approved, your vendor will provide a return shipping label within 2 business days. Items are returned directly to our fulfillment partners — not to us.  Damages &amp; Issues&nbsp;Inspect your order upon receipt. Contact us immediately at teamtattty@tattty.com if your item is defective, damaged, or incorrect.  Non-Returnable Items  Digital products and credit packs Sale items and gift cards Hazardous materials or flammable liquids  Exchanges&nbsp;Return the original item first, then place a new order once the return is accepted.  European Union — 14-Day Cooling Off Period&nbsp;EU customers have the right to cancel or return within 14 days of receipt for any reason, provided items are unused and in original packaging with proof of purchase.  Refunds&nbsp;Refunds are processed automatically to your original payment method once the vendor confirms receipt of the return. Allow up to 10 business days for your bank to post the refund. Questions? Contact teamtattty@tattty.com.",
+		"SHOPIFY_STORE_DOMAIN": "nba0ey-th.myshopify.com",
+		"MERCHANT_VERTICAL": " 'tattoo numbing creams', 'tattoo stencils', 'temporary body art', 'tattoo care & prep', 'professional studio supplies', 'tattoo culture merchandise', ' tattoo machines'",
+		"ENRICHMENT_CACHE_TTL": "3600",
+		"AI_MODEL": "@cf/google/gemma-4-26b-a4b-it"
+	}
+}
